@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🌱 Crop Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌾 Smart Crop Recommendation</h1>
+        <form method="POST">
+            <label>Nitrogen (N):</label>
+            <input type="number" step="any" name="N" required>
+
+            <label>Phosphorus (P):</label>
+            <input type="number" step="any" name="P" required>
+
+            <label>Potassium (K):</label>
+            <input type="number" step="any" name="K" required>
+
+            <label>Temperature (°C):</label>
+            <input type="number" step="any" name="temperature" required>
+
+            <label>Humidity (%):</label>
+            <input type="number" step="any" name="humidity" required>
+
+            <label>Soil pH:</label>
+            <input type="number" step="any" name="ph" required>
+
+            <label>Rainfall (mm):</label>
+            <input type="number" step="any" name="rainfall" required>
+
+            <button type="submit">Recommend Crop</button>
+        </form>
+
+        {% if crop %}
+        <div class="result">
+            <h2>✅ Recommended Crop: {{ crop }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
